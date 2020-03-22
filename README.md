@@ -1,10 +1,10 @@
-# kola
+# cloud-dashboard
 
-> An electron-vue project
+> 小程序云控制台
 
 #### Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
