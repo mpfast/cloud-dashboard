@@ -56,7 +56,7 @@ import fontList from 'font-list'
 export default {
   data: () => ({
     isMaximized: false,
-    drawerLeft: true,
+    drawerLeft: false,
     fonts: []
   }),
   computed: {

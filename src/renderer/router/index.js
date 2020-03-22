@@ -21,6 +21,11 @@ export default new Router({
       component: require('@/pages/Gitee').default
     },
     {
+      path: '/login',
+      name: 'login',
+      component: require('@/pages/Login').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

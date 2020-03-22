@@ -1,29 +1,40 @@
 <template>
-  <div class="wrapper"></div>
+  <v-container fluid>
+    <v-btn router to="/login">Login</v-btn>
+  </v-container>
 </template>
 
-<style lang="stylus">
-.wrapper{
-  position: fixed
-  top: 64px
-  right: 0
-  bottom: 0
-  left: 0
-}
-</style>
-
 <script>
+const { session } = require('electron').remote
+
 export default {
   data: () => ({
-    width: 0,
-    height: 0,
-    x: 0,
-    y: 0
+    access_token: null
   }),
-  methods: {
-    open(link) {
-      this.$electron.shell.openExternal(link)
+  computed: {
+    url() {
+      return this.$store.state.baseUrl
     }
+  },
+  methods: {
+    // 获取cookies
+    getCookie(name) {
+      session.defaultSession.cookies.get(
+        { url: this.url },
+        (error, cookies) => {
+          if (error) console.error(error)
+          const accessToken = cookies.find(cookie => cookie.name === name)
+          if (accessToken) {
+            this.access_token = accessToken.value
+          } else {
+            this.$router.push({ name: 'login' })
+          }
+        }
+      )
+    }
+  },
+  mounted() {
+    this.getCookie('access_token')
   }
 }
 </script>
