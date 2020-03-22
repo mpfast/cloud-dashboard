@@ -16,6 +16,11 @@ export default new Router({
       component: require('@/pages/About').default
     },
     {
+      path: '/gitee',
+      name: 'gitee',
+      component: require('@/pages/Gitee').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
