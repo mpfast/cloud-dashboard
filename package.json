@@ -62,7 +62,6 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "font-list": "^1.1.0",
     "vue": "^2.5.17",
     "vue-electron": "^1.0.6",
