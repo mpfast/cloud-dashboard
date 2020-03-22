@@ -33,6 +33,16 @@
       </v-btn>
     </v-toolbar>
     <v-navigation-drawer v-model="drawerLeft" fixed clipped stateless app>
+      <v-treeview
+        v-model="tree"
+        :open="open"
+        :items="items"
+        hoverable
+        activatable
+        item-key="name"
+        open-on-click
+      >
+      </v-treeview>
     </v-navigation-drawer>
     <v-content>
       <v-slide-y-transition mode="out-in">
@@ -57,6 +67,84 @@ export default {
   data: () => ({
     isMaximized: false,
     drawerLeft: false,
+    open: ['云函数'],
+    tree: [],
+    items: [
+      {
+        name: '云函数',
+        children: [
+          {
+            name: '触发云函数'
+          }
+        ]
+      },
+      {
+        name: '数据库',
+        children: [
+          {
+            name: '导入'
+          },
+          {
+            name: '导出'
+          },
+          {
+            name: '迁移状态查询'
+          },
+          {
+            name: '更新索引'
+          },
+          {
+            name: '新增集合'
+          },
+          {
+            name: '删除集合'
+          },
+          {
+            name: '获取集合信息'
+          },
+          {
+            name: '插入记录'
+          },
+          {
+            name: '删除记录'
+          },
+          {
+            name: '更新记录'
+          },
+          {
+            name: '查询记录'
+          },
+          {
+            name: '聚合'
+          },
+          {
+            name: '统计记录数量'
+          }
+        ]
+      },
+      {
+        name: '云存储',
+        children: [
+          {
+            name: '获取文件上传链接'
+          },
+          {
+            name: '获取文件下载链接'
+          },
+          {
+            name: '删除文件'
+          }
+        ]
+      },
+      {
+        name: '其他',
+        children: [
+          {
+            name: '获取腾讯云API调用凭证'
+          }
+        ]
+      }
+    ],
     fonts: []
   }),
   computed: {

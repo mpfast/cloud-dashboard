@@ -26,6 +26,7 @@ export default {
           const accessToken = cookies.find(cookie => cookie.name === name)
           if (accessToken) {
             this.access_token = accessToken.value
+            console.log(this.access_token)
           } else {
             this.$router.push({ name: 'login' })
           }
