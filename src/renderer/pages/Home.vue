@@ -1,7 +1,5 @@
 <template>
-  <div class="wrapper">
-    <v-text>hello</v-text>
-  </div>
+  <div class="wrapper"></div>
 </template>
 
 <style lang="stylus">
@@ -15,17 +13,17 @@
 </style>
 
 <script>
-  export default {
-    data: () => ({
-      width: 0,
-      height: 0,
-      x: 0,
-      y: 0
-    }),
-    methods: {
-      open (link) {
-        this.$electron.shell.openExternal(link)
-      }
+export default {
+  data: () => ({
+    width: 0,
+    height: 0,
+    x: 0,
+    y: 0
+  }),
+  methods: {
+    open(link) {
+      this.$electron.shell.openExternal(link)
     }
   }
+}
 </script>
