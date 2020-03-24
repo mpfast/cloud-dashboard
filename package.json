@@ -1,6 +1,7 @@
 {
   "name": "cloud-dashboard",
   "description": "小程序.云控制台",
+  "author": "Lerte Smith <lerte@qq.com>",
   "version": "1.0.0",
   "private": true,
   "scripts": {
