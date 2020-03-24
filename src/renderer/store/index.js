@@ -9,15 +9,20 @@ export default new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',
   state: {
     baseUrl: 'https://api.weixin.qq.com',
-    // 微信小程序APP_ID
-    appid: '',
-    // 微信小程序APP_SECRET
-    secret: ''
+    // 微信小程序appid
+    appid: null,
+    // 微信小程序secret
+    secret: null,
+    // 小程序全局唯一后台接口调用凭据access_token
+    access_token: null
   },
   mutations: {
     setApp(state, payload) {
       state.appid = payload.appid
       state.secret = payload.secret
+    },
+    setAccessToken(state, token) {
+      state.access_token = token
     }
   }
 })

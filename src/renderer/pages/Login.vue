@@ -5,8 +5,8 @@
         <v-img
           height="100%"
           class="grey lighten-2"
-          src="../../../static/login-cover@2x.jpg"
-          lazy-src="../../../static/login-cover@2x.jpg"
+          src="https://picsum.photos/800/600"
+          lazy-src="https://picsum.photos/800/600"
         >
           <v-layout
             slot="placeholder"
@@ -55,7 +55,7 @@
               :disabled="disabled"
               large
               block
-              color="primary"
+              color="secondary"
               @click.native="login"
               >登录</v-btn
             >
@@ -82,12 +82,6 @@
   >.flex {
     background: #fff;
     height: 450px;
-  }
-}
-
-.v-text-field > .v-input__control > .v-input {
-  &__slot {
-    border: 1px solid #ccc;
   }
 }
 </style>
@@ -171,6 +165,7 @@ export default {
                 appid: this.appid,
                 secret: this.secret
               })
+              this.$router.push({ name: 'home' })
             }
           })
         this.loading = false
